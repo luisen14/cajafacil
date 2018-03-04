@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WS test</title>
+    <script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="js/ws_events_dispatcher.js"></script>
+    <script type="text/javascript" src="js/config/settings"></script>
+    <script type="text/javascript">
+        var localConn = null;
+
+        function notifyGlobal(message, status){
+            var cls = (status !== null)?status:'success';
+            $('#notifyDiv').text(message);
+        }
+
+        function notifyError(message){
+            $('#notifyDiv').text(message);
+        }
+
+        function executeLogic(socket){
+
+        }
+
+        function LocalConnection(localAddr, workingCallback, errorCallback){
+            var localURL = 'ws://' + localAddr + '/echo';
+            var ticker = null;
+
+            console.log("locat host url: " + this.localURL);
+            var socket = null;
+
+            this.scale = function(
+                tabId,
+                port,
+                braud,
+                stopBits,
+                parity,
+                flowControl,
+                dataBits,
+                dataAscii,
+                polling
+            ){
+                socket.send( 'Scale',
+                {sTabId: tabId,
+                sPort: port,
+                sBraud: braud,
+                sStopBits: stopBits,
+                sParity: parity,
+                sFlowControl: flowControl,
+                sDataBits: dataBits,
+                DataAssci: dataAscii,
+                ispolling: polling} );
+            };
+
+            this.identify = function(callback) {
+                socket.bind('mac_address', callback);
+                socket.send( 'Identify', {val: '1'} );
+
+                /*
+                socket.bind('mac_address', function(data){
+                    console.log('mac address received: ' + data);
+                 });
+                 */
+            };
+
+            this.poll = function(){
+                if (socket === null)
+                    throw "Socket is not started yet";
+                socket.send( 'heart_beat', {val: '1'} );
+            };
+
+            this.startPolling = function(){
+                ticker = setInterval(socket.send( 'heart_beat', {val: '1'} ), 30000);
+            };
+
+            this.start = function(){
+                 socket = new OmniWebSocket(localURL);
+                 starter = this.poll;
+
+                 socket.bind('open', function(event){
+                    console.log('WebSocket connected ');
+                    //socket.close();
+                    //removePreloader();
+                    notifyGlobal("Conectado a instancia local");
+
+                    //workingCallback(this.socket);
+                    //starter(this.socket);
+                    //this.ticker = setInterval(poll, 30000);
+                    ticker = setInterval(starter, 30000);
+                });
+
+                socket.bind('error', function(error){
+                    console.log('WebSocket Error ' + error);
+                    errorCallback('WebSocket Error ' + error);
+
+                    if (this.ticker !== null){
+                        clearInterval(ticker);
+                    }
+                });
+            };
+
+            return this;
+        }
+
+        $(document).ready(function(){
+            if (!window.WebSocket && window.MozWebSocket) {
+                window.WebSocket = window.MozWebSocket;
+            }
+
+            if (!window.WebSocket) {
+                $("#notifyDiv").text("WebSocket not supported by this browser, upgrade your browser to a newest version");
+                return ;
+            }
+
+            localConn = new LocalConnection(localAddress, executeLogic, notifyError);
+            localConn.start();
+
+            $('#mac_address').on("click", function(){
+                console.log('requesting mac address...');
+                localConn.identify(function(data){
+                    console.log('mac address received: ' + data);
+                 });
+            });
+
+             $('#scale_reader').on("click", function(){
+                console.log('starting scale reading...');
+                localConn.scale('1','COM6','9600','1','Par','','8','P','true');
+            });
+        });
+
+
+    </script>
+</head>
+<body>
+    <div id="notifyDiv"></div>
+    <div id="resultDiv"></div>
+    <div id="div_controls">
+        <input id="mac_address" type="button" value="Get Mac Addr." />
+        <input id="scale_reader" type="button" value="Start scale reader" />
+    </div>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script language="JavaScript">
+    function flyEye() {
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+
+        var middle = canvas.height / 2;
+        ctx.translate(middle, middle);
+        var radius = middle * 0.90;
+        var TOT_POINTS = 12;
+        var points = new Array(TOT_POINTS * 2);
+
+        function sleep (time) {
+          return new Promise((resolve) => setTimeout(resolve, time));
+        }
+
+        initPoints();
+        drawClock();
+
+        function initPoints(){
+          for (let i = 0; i < TOT_POINTS; i++){
+            let point = {
+              'x' : radius * Math.cos( i * Math.PI / TOT_POINTS) ,
+              'y' : radius * Math.sin( i * Math.PI / TOT_POINTS)
+            };
+            points[i] = point;
+
+            point = {
+              'x' : -1 * radius * Math.cos( i * Math.PI / TOT_POINTS) ,
+              'y' : -1 * radius * Math.sin( i * Math.PI / TOT_POINTS)
+            };
+            points[TOT_POINTS + i ] = point;
+          }
+        }
+
+
+        function drawClock() {
+            ctx.arc(0, 0, radius, 0 , 2*Math.PI);
+            ctx.stroke();
+            drawPoints(ctx, radius);
+
+            let i = 0;
+            animation = setInterval(() => {
+                i = (i+1)  % (TOT_POINTS);
+              drawJoiningLines(ctx, radius, i);
+              if (i == 0){
+                console.log('animation loop compelted');
+                //    ctx.arc(0, 0, radius, 0 , 2*Math.PI);
+                    //		ctx.stroke();
+                clearInterval(animation);
+              }
+            }, 100 );
+
+            //drawNumbers(ctx, radius);
+            //tx.fillStyle = "black";
+            //ctx.fill();
+        }
+
+        function drawNumbers(ctx, radius) {
+          var ang;
+          var num;
+
+          for(num = 1; num < 13; num++){
+            ang = num * Math.PI / 6;
+            ctx.rotate(ang);
+            ctx.translate(0, -radius);
+            ctx.rotate(-ang);
+
+            drawPoint(ctx, radius);
+
+            ctx.rotate(ang);
+            ctx.translate(0, radius);
+            ctx.rotate(-ang);
+          }
+        }
+
+        function drawPoints(ctx, radius){
+          for (let i = 0; i < points.length; i++){
+            let point = points[i];
+            ctx.translate(point.x, point.y);
+            drawPoint(ctx, radius);
+            ctx.translate(-point.x, -point.y);
+          }
+        }
+
+        function drawJoiningLines(ctx, radius, delta){
+          for (let i = 0; i < (2*TOT_POINTS); i++){
+            let point = points[i];
+
+            ctx.beginPath();
+                ctx.moveTo(point.x, point.y);
+
+            let point2 = points[(i + delta) % (2*TOT_POINTS)];
+                ctx.lineTo(point2.x, point2.y);
+                ctx.stroke();
+          }
+        }
+
+        function drawPoint(ctx, radius) {
+          ctx.beginPath();
+          ctx.arc(0, 0, radius*0.02, 0, 2*Math.PI);
+          ctx.fillStyle = '#333';
+          ctx.fill();
+        }
+     }
+     window.onload = flyEye;
+    </script>
+</head>
+<body>
+<canvas id="myCanvas" width="400" height="400"
+        style="border:1px solid #000000;">
+</canvas>
+</body>
+</html>

@@ -1,0 +1,106 @@
+Mar 03, 2018 6:30:04 PM com.motus.logging.ParentLogger setupLogger
+INFO: cajafacil parent logger booted up
+Mar 03, 2018 6:30:04 PM com.motus.PortableServer loadProperties
+INFO: Loading properties file 
+Mar 03, 2018 6:30:04 PM com.motus.PortableServer main
+INFO: Starting: cajafacil Version: 0.1 in production mode: false
+Mar 03, 2018 6:30:04 PM com.motus.PortableServer main
+INFO: Starting listener in port: 8080
+Mar 03, 2018 6:30:04 PM com.motus.logging.JettyLog info
+INFO: Logging initialized @380ms
+Mar 03, 2018 6:30:05 PM com.motus.PortableServer defaultServletHolder
+INFO: Base URI: file:/C:/Users/peanuts/projecs/CajaFacil/CajaFacil/out/production/CajaFacil/webroot/
+Mar 03, 2018 6:30:05 PM com.motus.PortableServer enableWebSockets
+INFO: WS Path: /echo
+Mar 03, 2018 6:30:05 PM com.motus.logging.JettyLog info
+INFO: jetty-9.3.6.v20151106
+Mar 03, 2018 6:30:05 PM com.motus.logging.JettyLog warn
+WARNING: Duplicate mapping from {} to {}
+Mar 03, 2018 6:30:05 PM com.motus.logging.JettyLog warn
+WARNING: Duplicate mapping from {} to {}
+Mar 03, 2018 6:30:05 PM com.motus.logging.JettyLog warn
+WARNING: The XML schema [XMLSchema.dtd] could not be found. This is very likely to break XML validation if XML validation is enabled.
+Mar 03, 2018 6:30:05 PM com.motus.logging.JettyLog warn
+WARNING: The XML schema [datatypes.dtd] could not be found. This is very likely to break XML validation if XML validation is enabled.
+Mar 03, 2018 6:30:05 PM com.motus.logging.JettyLog warn
+WARNING: The XML schema [xml.xsd] could not be found. This is very likely to break XML validation if XML validation is enabled.
+Mar 03, 2018 6:30:05 PM com.motus.logging.JettyLog warn
+WARNING: The XML schema [web-app_2_2.dtd] could not be found. This is very likely to break XML validation if XML validation is enabled.
+Mar 03, 2018 6:30:05 PM com.motus.logging.JettyLog warn
+WARNING: The XML schema [web-app_2_3.dtd] could not be found. This is very likely to break XML validation if XML validation is enabled.
+Mar 03, 2018 6:30:05 PM com.motus.logging.JettyLog warn
+WARNING: The XML schema [j2ee_web_services_1_1.xsd] could not be found. This is very likely to break XML validation if XML validation is enabled.
+Mar 03, 2018 6:30:05 PM com.motus.logging.JettyLog warn
+WARNING: The XML schema [j2ee_web_services_client_1_1.xsd] could not be found. This is very likely to break XML validation if XML validation is enabled.
+Mar 03, 2018 6:30:05 PM com.motus.logging.JettyLog warn
+WARNING: The XML schema [web-app_2_4.xsd] could not be found. This is very likely to break XML validation if XML validation is enabled.
+Mar 03, 2018 6:30:05 PM com.motus.logging.JettyLog warn
+WARNING: The XML schema [j2ee_1_4.xsd] could not be found. This is very likely to break XML validation if XML validation is enabled.
+Mar 03, 2018 6:30:05 PM com.motus.logging.JettyLog warn
+WARNING: The XML schema [web-app_2_5.xsd] could not be found. This is very likely to break XML validation if XML validation is enabled.
+Mar 03, 2018 6:30:05 PM com.motus.logging.JettyLog warn
+WARNING: The XML schema [javaee_5.xsd] could not be found. This is very likely to break XML validation if XML validation is enabled.
+Mar 03, 2018 6:30:05 PM com.motus.logging.JettyLog warn
+WARNING: The XML schema [javaee_web_services_1_2.xsd] could not be found. This is very likely to break XML validation if XML validation is enabled.
+Mar 03, 2018 6:30:05 PM com.motus.logging.JettyLog warn
+WARNING: The XML schema [javaee_web_services_client_1_2.xsd] could not be found. This is very likely to break XML validation if XML validation is enabled.
+Mar 03, 2018 6:30:05 PM com.motus.logging.JettyLog warn
+WARNING: The XML schema [web-app_3_0.xsd] could not be found. This is very likely to break XML validation if XML validation is enabled.
+Mar 03, 2018 6:30:05 PM com.motus.logging.JettyLog warn
+WARNING: The XML schema [web-fragment_3_0.xsd] could not be found. This is very likely to break XML validation if XML validation is enabled.
+Mar 03, 2018 6:30:05 PM com.motus.logging.JettyLog warn
+WARNING: The XML schema [web-common_3_0.xsd] could not be found. This is very likely to break XML validation if XML validation is enabled.
+Mar 03, 2018 6:30:05 PM com.motus.logging.JettyLog warn
+WARNING: The XML schema [javaee_6.xsd] could not be found. This is very likely to break XML validation if XML validation is enabled.
+Mar 03, 2018 6:30:05 PM com.motus.logging.JettyLog warn
+WARNING: The XML schema [javaee_web_services_1_3.xsd] could not be found. This is very likely to break XML validation if XML validation is enabled.
+Mar 03, 2018 6:30:05 PM com.motus.logging.JettyLog warn
+WARNING: The XML schema [javaee_web_services_client_1_3.xsd] could not be found. This is very likely to break XML validation if XML validation is enabled.
+Mar 03, 2018 6:30:05 PM com.motus.logging.JettyLog warn
+WARNING: The XML schema [web-app_3_1.xsd] could not be found. This is very likely to break XML validation if XML validation is enabled.
+Mar 03, 2018 6:30:05 PM com.motus.logging.JettyLog warn
+WARNING: The XML schema [web-fragment_3_1.xsd] could not be found. This is very likely to break XML validation if XML validation is enabled.
+Mar 03, 2018 6:30:05 PM com.motus.logging.JettyLog warn
+WARNING: The XML schema [web-common_3_1.xsd] could not be found. This is very likely to break XML validation if XML validation is enabled.
+Mar 03, 2018 6:30:05 PM com.motus.logging.JettyLog warn
+WARNING: The XML schema [javaee_7.xsd] could not be found. This is very likely to break XML validation if XML validation is enabled.
+Mar 03, 2018 6:30:05 PM com.motus.logging.JettyLog warn
+WARNING: The XML schema [javaee_web_services_1_4.xsd] could not be found. This is very likely to break XML validation if XML validation is enabled.
+Mar 03, 2018 6:30:05 PM com.motus.logging.JettyLog warn
+WARNING: The XML schema [javaee_web_services_client_1_4.xsd] could not be found. This is very likely to break XML validation if XML validation is enabled.
+Mar 03, 2018 6:30:06 PM com.motus.logging.JettyLog info
+INFO: Started {}
+Mar 03, 2018 6:30:06 PM com.motus.logging.JettyLog info
+INFO: Started {}
+Mar 03, 2018 6:30:06 PM com.motus.logging.JettyLog info
+INFO: Started @2043ms
+Mar 03, 2018 6:30:06 PM com.motus.PortableServer getServerUri
+INFO: Server URI: http://localhost:8080/
+Mar 03, 2018 6:30:08 PM com.motus.OmniSocket onOpen
+INFO: WebSocket Connect: WebSocketSession[websocket=JsrEndpointEventDriver[com.motus.OmniSocket],behavior=SERVER,connection=WebSocketServerConnection@64CB4158{endp=SelectChannelEndPoint@10fd5060{/0:0:0:0:0:0:0:1:57363<->8080,Open,in,out,-,-,9/300000,WebSocketServerConnection}{io=0/0,kio=0,kro=1},ios=IOState@4bc1827d[CONNECTED,!in,out],f=Flusher[queueSize=0,aggregateSize=0,failure=null],g=Generator[SERVER,validating,+rsv1],p=Parser@7fa9fe70[ExtensionStack,s=START,c=0,len=0,f=null]},remote=WebSocketRemoteEndpoint@26d2ab06[batching=true],incoming=JsrEndpointEventDriver[com.motus.OmniSocket],outgoing=ExtensionStack[queueSize=0,extensions=[permessage-deflate],incoming=org.eclipse.jetty.websocket.common.extensions.compress.PerMessageDeflateExtension,outgoing=org.eclipse.jetty.websocket.common.extensions.compress.PerMessageDeflateExtension]]
+Mar 03, 2018 6:30:08 PM com.motus.task.TaskFactory <clinit>
+INFO: Feeding task factory ...
+Mar 03, 2018 6:30:15 PM com.motus.OmniSocket onMessage
+INFO: message received: [{}]
+Mar 03, 2018 6:30:15 PM com.motus.MessageProcessor$TaskProcessor processRequest
+INFO: Setting data in task
+Mar 03, 2018 6:30:38 PM com.motus.OmniSocket onMessage
+INFO: message received: [{}]
+Mar 03, 2018 6:30:38 PM com.motus.MessageProcessor$TaskProcessor processRequest
+INFO: Setting data in task
+Mar 03, 2018 6:30:38 PM com.motus.taskhandler.HeartBeatTask executeTask
+INFO: Heart beat received ...
+Mar 03, 2018 6:30:41 PM com.motus.OmniSocket onMessage
+INFO: message received: [{}]
+Mar 03, 2018 6:30:41 PM com.motus.MessageProcessor$TaskProcessor processRequest
+INFO: Setting data in task
+Mar 03, 2018 6:30:41 PM com.motus.taskhandler.ScaleReaderTask executeTask
+INFO: in scale reading task
+Mar 03, 2018 6:30:41 PM com.motus.util.ScaleReader getInstance
+INFO: Scale reader getting instance
+Mar 03, 2018 6:30:41 PM com.motus.util.ScaleReader getInstance
+INFO: Setup of scale reader
+Mar 03, 2018 6:30:41 PM com.motus.util.ScaleReader getInstance
+INFO: About to start serial comm
+Mar 03, 2018 6:30:41 PM com.motus.taskhandler.ScaleReaderTask executeTask
+SEVERE: Exception while initializing scale reader jssc.SerialPortException: Port name - COM6; Method name - openPort(); Exception type - Port not found.
